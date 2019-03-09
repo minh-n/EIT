@@ -1,5 +1,5 @@
 #Exo II.3 : analyse morpho-syntaxique
-#représenter les étiquettes sous le format "Mot_etiquette"
+#representer les etiquettes sous le format "Mot_etiquette"
 import numpy as np
 
 inputFile = open("wsj_0010_sample.txt.conll","r")
@@ -14,4 +14,9 @@ for i in range(len(line)):
 		mots = line[i][1].split(' ')
 
 		for mot in mots:
-			outputFile.write(mot + "_" + line[i][4] + " ") 
+			if(mot == "."):
+				outputFile.write(mot + "_" + ". ")
+			elif (mot == ","):
+			 	outputFile.write(mot + "_" + ", ")
+			else:
+				outputFile.write(mot + "_" + line[i][4] + " ") 
