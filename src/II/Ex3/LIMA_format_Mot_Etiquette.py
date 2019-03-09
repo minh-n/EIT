@@ -2,8 +2,8 @@
 #representer les etiquettes sous le format "Mot_etiquette"
 import numpy as np
 
-inputFile = open("wsj_0010_sample.txt.conll","r")
-outputFile = open("mot_etiquette_output.txt","w")
+inputFile = open(sys.argv[1],"r") #wsj_0010_sample.txt.conll
+outputFile = open(sys.argv[2], "w") #mot_etiquette_output.txt
 
 line = inputFile.readlines()
 
