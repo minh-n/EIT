@@ -1,10 +1,6 @@
 #partie V.2
-
 import sys 
 import re
-
-
-lineNb = 1 #used in debug
 
 corresFile = open("corresDict.txt")
 corresDict = {}
@@ -22,16 +18,16 @@ lignes = inputFile.readlines()
 
 for i in range(len(lines)):
     lignes[i] = lignes[i].split('\t')
-
-    if lines[i] != '\n':
+    if lines[i] != '\n': #si la ligne n'est pas vite
         
         info = lines[i].strip().split("\t")
+        w = re.sub('\s+', 'Espace', info[1])
 
-        w, se = info[1], info[5]
+        outputFile.write( w + "/" + corresDict[info[5]] + " ") #ecriture du mot et du tag correct dans le fichier
 
-        w = re.sub('\s+', 'Espace', w)
-
-        outputFile.write(w + "/" + corresDict[se] + " ")
     else:
-        outputFile.write("\n")
-    lineNb += 1
+        outputFile.write("\n")  #sinon, aller a la ligne
+
+#fermeture des fichiers
+inputFile.close()
+outputFile.close()

@@ -18,3 +18,8 @@ for i in range(len(lines)):
             outputFile.write(mot.replace("/", "_"))
         outputFile.write(" ")
     outputFile.write("\n")
+
+
+#fermeture des fichiers
+inputFile.close()
+outputFile.close()
