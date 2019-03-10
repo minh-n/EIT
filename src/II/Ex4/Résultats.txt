@@ -1,0 +1,38 @@
+Résultats
+
+Avec ajout d'Espace PTB
+
+Word precision: 0.877192982456
+Word recall: 0.909090909091
+Tag precision: 0.640350877193
+Tag recall: 0.663636363636
+Word F-measure: 0.892857142857
+Tag F-measure: 0.651785714286
+
+Sans ajout d'Espace PTB
+
+Word precision: 0.877192982456
+Word recall: 0.909090909091
+Tag precision: 0.640350877193
+Tag recall: 0.663636363636
+Word F-measure: 0.892857142857
+Tag F-measure: 0.651785714286
+
+
+Avec ajout d'Espace universel
+
+Word precision: 0.339622641509
+Word recall: 0.327272727273
+Tag precision: 0.330188679245
+Tag recall: 0.318181818182
+Word F-measure: 0.333333333333
+Tag F-measure: 0.324074074074
+
+Sans ajout d'Espace universel
+
+Word precision: 0.877192982456
+Word recall: 0.909090909091
+Tag precision: 0.745614035088
+Tag recall: 0.772727272727
+Word F-measure: 0.892857142857
+Tag F-measure: 0.758928571429
