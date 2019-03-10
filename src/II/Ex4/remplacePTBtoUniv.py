@@ -40,7 +40,6 @@ for i in range(0, len(line)):
 	outputFile.write(line[i] + "\n")
 
 #fermeture des fichiers
-
 inputFile.close()
 outputFile.close()
 
