@@ -1,7 +1,6 @@
 '''
-	Syntax: python PTBtoUniv.py Path_To_POSTags_PTB_Universal_Linux.txt Path_To_Input.txt Path_to_output.txt
-	Example: python PTBtoUniv.py POSTags_PTB_Universal_Linux.txt wsj_0010_sample.txt.pos.stanford wsj_0010_sample.txt.pos.univ.stanford
-	
+	Syntax: python LimaToStanford.py Path_To_POSTags_LIMA_Stanford.txt Path_To_Input.txt Path_to_output.txt
+	Example: 
 '''
 
 import sys
@@ -10,7 +9,7 @@ import os
 if __name__=="__main__":
 	args = sys.argv
 	if len(args) != 4:
-		print "Syntax : python PTBtoUniv.py Path_To_POSTags_PTB_Universal_Linux.txt Path_To_Input.txt Path_to_output.txt"
+		print "Syntax : python LimaToStanford.py Path_To_POSTags_LIMA_Stanford.txt Path_To_Input.txt Path_to_output.txt"
 		sys.exit(1)
 
 	tags_filename = args[1]
@@ -18,10 +17,10 @@ if __name__=="__main__":
 	output_filename = args[3]
 
 	with open(tags_filename, "r") as tags_file:
-		dictPTB_Univ = {}
+		dictLIMAtoStanford = {}
 		for line in tags_file:
 			split_line = line.split()
-			dictPTB_Univ[split_line[0]] = split_line[1]
+			dictLIMAtoStanford[split_line[0]] = split_line[1]
 
 	with open(input_filename, "r") as input_file:
 		output = ""
@@ -32,9 +31,9 @@ if __name__=="__main__":
 			for token in split_line:
 				word = token.split("_")
 
-				if len(word):
-					if word[1] in dictPTB_Univ.keys():
-						tag = dictPTB_Univ[word[1]]
+				if len(word) > 0:
+					if word[1] in dictLIMAtoStanford.keys():
+						tag = dictLIMAtoStanford[word[1]]
 						output += word[0] + "_" + tag + " "
 				else:
 					output += word[0] + " "
